@@ -31,13 +31,14 @@ export const ChatWithPdf = async (req: Request, res: Response) => {
     const result = await vectorStore.similaritySearch(query);
 
     const context = result.map((doc) => doc.pageContent).join("\n\n");
+    console.log(context);
 
     const systemPrompt = `You are a helpful assistant that can answer questions from the provided context.
     context: ${context}
     `;
 
     const response = await ai.models.generateContent({
-      model: "gemini-2.0-flash",
+      model: "gemini-1.5-flash",
       contents: query,
       config: {
         systemInstruction: systemPrompt,

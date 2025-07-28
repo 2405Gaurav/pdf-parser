@@ -3,6 +3,6 @@ import { ChatWithPdf } from "../controller/chat";
 
 const router = express.Router();
 
-router.post("/chat", ChatWithPdf);
+router.post("/", ChatWithPdf);
 
 export default router;

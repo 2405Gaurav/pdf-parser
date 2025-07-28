@@ -68,6 +68,6 @@ export const uploadPdf = async (req: Request, res: Response) => {
  finally {
     if (tempFilePath && fs.existsSync(tempFilePath)) {
       fs.unlinkSync(tempFilePath);
-    }
+    } 
   }
 };
